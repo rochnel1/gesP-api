@@ -12,6 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/teacher")
+@CrossOrigin("http://localhost:3000")
 public class TeacherController {
     @Autowired
     private TeacherRepository teacherRepository;
