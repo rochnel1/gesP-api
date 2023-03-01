@@ -23,7 +23,7 @@ deploy-job:      # This job runs in the deploy stage.
     - name: docker:dind
   script:
     - echo "Deploying application..."
-    - docker build -t registry.gitlab.com/myusername/myproject . -f Dockerfile
+    - docker build -t registry.gitlab.com/rochnelticdo1/gesp_api . -f Dockerfile
     - echo "Login to gitlab..."
     - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN registry.gitlab.com
     - echo "Pushing to gitlab..."
