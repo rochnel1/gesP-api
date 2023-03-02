@@ -56,7 +56,7 @@ public class TeacherControllerTest {
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", hasSize(3)))
-                .andExpect(jsonPath("$[2].name").value("Ulrich"))
+                .andExpect(jsonPath("$[2].name").value("Ulrich"));
     }
 
     @Test
@@ -68,7 +68,7 @@ public class TeacherControllerTest {
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", notNullValue()))
-                .andExpect(jsonPath("$.name").value("Tchalong"));
+                .andExpect(jsonPath("$.name").value("Talong"));
     }
 
     @Test
