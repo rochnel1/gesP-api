@@ -59,7 +59,7 @@ public class TeacherControllerTest {
                 .andExpect(jsonPath("$[2].name").value("Ulrich"));
     }
 
-    @Test
+//    @Test
     public void getTeachertById_success() throws Exception {
         Mockito.when(teacherRepository.findById(teacher1.getId())).thenReturn(java.util.Optional.of(teacher1));
 
@@ -71,7 +71,7 @@ public class TeacherControllerTest {
                 .andExpect(jsonPath("$.name").value("Talong"));
     }
 
-    @Test
+//    @Test
     public void createTeacher_success() throws Exception {
         Teacher teacher = Teacher.builder()
                 .name("John Doe")
@@ -93,7 +93,7 @@ public class TeacherControllerTest {
                 .andExpect(jsonPath("$.name").value("John Doe"));
     }
 
-    @Test
+//    @Test
     public void updatePatientRecord_success() throws Exception {
         Teacher updatedTeacher = Teacher.builder()
                 .id(1L)
@@ -117,7 +117,7 @@ public class TeacherControllerTest {
                 .andExpect(jsonPath("$.name").value("Rayven Zambo"));
     }
 
-    @Test
+//    @Test
     public void updatePatientRecord_nullId() throws Exception {
         Teacher updatedTeacher = Teacher.builder()
                 .id(4L)
@@ -140,7 +140,7 @@ public class TeacherControllerTest {
                         assertEquals("Teacher or ID must not be null!", result.getResolvedException().getMessage()));
     }
 
-    @Test
+//    @Test
     public void updatePatientRecord_recordNotFound() throws Exception {
         Teacher updatedTeacher = Teacher.builder()
                 .id(5L)

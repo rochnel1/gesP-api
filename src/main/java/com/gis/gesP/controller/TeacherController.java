@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/teacher")
+@RequestMapping({"/teacher", "/"})
 @CrossOrigin({"http://localhost:3000", "https://gesp01.netlify.app"})
 public class TeacherController {
     @Autowired
@@ -61,4 +61,9 @@ public class TeacherController {
         teacherRepository.delete(teacher);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
+    @GetMapping("/")
+    public String healthCheck() {
+        return "HEALTH CHECK OK!";
+    }
+
 }
